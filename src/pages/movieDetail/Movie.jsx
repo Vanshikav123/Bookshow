@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from "react"
 import "./Movie.css"
 import { useParams } from "react-router-dom"
-
+import { Link } from "react-router-dom"
 const Movie = () => {
     const [currentMovieDetail, setMovie] = useState()
     const { id } = useParams()
@@ -37,8 +37,6 @@ const Movie = () => {
                             {currentMovieDetail && currentMovieDetail.rating.average} <i class="fas fa-star" />
                            
                         </div>  
-                      
-                      
                     </div>
                     <div className="movie__detailRightBottom">
                       
@@ -47,8 +45,11 @@ const Movie = () => {
                     
                 </div>
             </div>
+            <div className="movie__links">
+            <button className="button"><Link to="/book"> Book the show Now</Link></button>
+            </div>
       </div>     
-           
+            
     )
 }
 
